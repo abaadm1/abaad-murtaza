@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/portfolio/Navbar";
+import { Siderail } from "@/components/portfolio/Siderail";
 import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
@@ -35,16 +35,18 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <ScrollProgress />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
+      <Siderail />
+      <div className="md:pl-72">
+        <main className="pt-14 md:pt-0">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
