@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-24 pb-16 px-6"
+      className="relative min-h-screen flex items-center pt-16 md:pt-24 pb-16 px-6"
     >
       <div
         aria-hidden
