@@ -75,12 +75,12 @@ export function Leadership() {
 
       <button
         onClick={() => {
-          const projectsSection = document.getElementById('projects');
+          const projectsSection = document.getElementById('contact');
           if (projectsSection) {
             projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }}
-        aria-label="Scroll to projects"
+        aria-label="Scroll to contact"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
       >
         <ArrowDown className="h-5 w-5" />
