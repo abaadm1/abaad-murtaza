@@ -16,26 +16,6 @@ import "../styles/globals.css";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "Abaad Murtaza — Portfolio" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Abaad Murtaza — Data Scientist and AI/ML Engineer building LLM, RAG, and computer vision systems. Based in Germany.",
-      },
-      { property: "og:title", content: "Abaad Murtaza — Data Scientist & AI/ML Engineer" },
-      {
-        property: "og:description",
-        content:
-          "AI Research Assistant at DFKI. M.Sc. Data Science & AI at Saarland University. LLMs, RAG, computer vision and backend engineering.",
-      },
-    ],
-    links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-    ],
-  }),
 });
 
 function Index() {
