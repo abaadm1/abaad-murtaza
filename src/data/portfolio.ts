@@ -14,8 +14,8 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a Data Scientist and AI/ML Engineer specialising in machine learning, computer vision, large language models, and backend development. I love turning research into shipped products — and shipping products that actually use research.",
-    "Today I'm completing my M.Sc. in Data Science and Artificial Intelligence at Saarland University, Germany, while working as an AI Research Assistant at the German Research Center for Artificial Intelligence (DFKI), focused on LLM-based automation systems.",
+    "I'm a Data Scientist and AI/ML Engineer specialising in machine learning, computer vision, large language models, and backend development. I love turning research into shipped products, and shipping products that actually use research.",
+    "Currently completing my M.Sc. in Data Science and Artificial Intelligence at Saarland University, Germany, while working as an AI Research Assistant at the German Research Center for Artificial Intelligence (DFKI), focused on LLM-based automation systems.",
   ],
   highlights: [
     "M.Sc. Data Science & AI — Saarland University (2024–2026)",
