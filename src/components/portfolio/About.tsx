@@ -1,58 +1,69 @@
-import { Check } from "lucide-react";
-import { about, education, certifications } from "@/data/portfolio";
+import { Check, ArrowDown } from "lucide-react";
+import { about } from "@/data/portfolio";
 import { SectionTitle } from "./SectionTitle";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export function About() {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollReveal<HTMLDivElement>();
+  
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="relative min-h-screen flex items-center py-24 px-6 bg-secondary/40">
       <div className="max-w-6xl mx-auto">
         <SectionTitle eyebrow="01 — About" title="A bit about me" />
-        <div className="grid md:grid-cols-5 gap-10">
-          <div className="reveal md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
-            {about.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+        <div 
+          ref={contentRef}
+          className={`max-w-4xl mx-auto space-y-4 text-muted-foreground leading-relaxed transition-all duration-700 ${
+            contentVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {about.paragraphs.map((p, i) => (
+            <p 
+              key={i}
+              className={`transition-all duration-700 delay-${i * 100} ${
+                contentVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-4'
+              }`}
+            >
+              {p}
+            </p>
+          ))}
+          <ul className={`mt-6 grid sm:grid-cols-2 gap-2 transition-all duration-700 delay-300 ${
+            contentVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-4'
+          }`}>
+            {about.highlights.map((h, index) => (
+              <li 
+                key={h} 
+                className={`flex items-start gap-2 text-sm text-foreground transition-all duration-700 delay-${(index + 4) * 100} ${
+                  contentVisible 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-4'
+                }`}
+              >
+                <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                <span>{h}</span>
+              </li>
             ))}
-            <ul className="mt-6 grid sm:grid-cols-2 gap-2">
-              {about.highlights.map((h) => (
-                <li key={h} className="flex items-start gap-2 text-sm text-foreground">
-                  <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="reveal md:col-span-2 space-y-6">
-            <div className="rounded-lg border border-border p-5">
-              <h3 className="text-sm font-semibold mb-3 tracking-wide uppercase text-muted-foreground">
-                Education
-              </h3>
-              <ul className="space-y-3">
-                {education.map((e) => (
-                  <li key={e.degree}>
-                    <div className="text-sm font-medium">{e.degree}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {e.school} · {e.duration}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-lg border border-border p-5">
-              <h3 className="text-sm font-semibold mb-3 tracking-wide uppercase text-muted-foreground">
-                Certifications
-              </h3>
-              <ul className="space-y-2 text-sm">
-                {certifications.map((c) => (
-                  <li key={c} className="text-muted-foreground">
-                    {c}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          </ul>
         </div>
       </div>
+
+      <button
+        onClick={() => {
+          const experienceSection = document.getElementById('experience');
+          if (experienceSection) {
+            experienceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+        aria-label="Scroll to experience"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
+      >
+        <ArrowDown className="h-5 w-5" />
+      </button>
     </section>
   );
 }

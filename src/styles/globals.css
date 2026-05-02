@@ -1,0 +1,53 @@
+/* Global Animations */
+
+/* Neural Network Animations */
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes neural-break {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: 10; }
+}
+
+@keyframes neural-node-pulse {
+  0%, 100% { r: 3; opacity: 0.6; }
+  50% { r: 6; opacity: 1; }
+}
+
+.neural-line {
+  stroke-dasharray: 5, 5;
+  animation: neural-break 3s ease-in-out infinite;
+}
+
+.neural-node {
+  animation: neural-node-pulse 2s ease-in-out infinite;
+}
+
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-750 { animation-delay: 0.75s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-1250 { animation-delay: 1.25s; }
+.animation-delay-1500 { animation-delay: 1.5s; }
+.animation-delay-1750 { animation-delay: 1.75s; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-2250 { animation-delay: 2.25s; }
+.animation-delay-2500 { animation-delay: 2.5s; }
+.animation-delay-3000 { animation-delay: 3s; }
+.animation-delay-3500 { animation-delay: 3.5s; }
+.animation-delay-4000 { animation-delay: 4s; }
+.animation-delay-4500 { animation-delay: 4.5s; }
+.animation-delay-5000 { animation-delay: 5s; }
+
+/* Scroll Reveal Animations */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+
+.reveal-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

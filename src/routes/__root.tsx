@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { ClientOnly } from "@/components/ClientOnly";
 
 function NotFoundComponent() {
   return (
@@ -61,7 +62,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <ClientOnly fallback={<div className="min-h-screen bg-background" />}>
+          {children}
+        </ClientOnly>
         <Scripts />
       </body>
     </html>

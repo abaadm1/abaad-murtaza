@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Github, Linkedin, Mail, Moon, Sun, User, Briefcase, Wrench, FolderKanban, GraduationCap, MessageCircle, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Moon, Sun, User, Briefcase, Wrench, FolderKanban, GraduationCap, MessageCircle, Menu, X, Bot } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
 import { profile } from "@/data/portfolio";
 
 const links = [
   { href: "#about", label: "About Me", icon: User },
   { href: "#experience", label: "Work Experience", icon: Briefcase },
-  { href: "#skills", label: "Skills", icon: Wrench },
   { href: "#projects", label: "Projects", icon: FolderKanban },
+  { href: "#skills", label: "Skills", icon: Wrench },
   { href: "#education", label: "Education", icon: GraduationCap },
   { href: "#contact", label: "Contact", icon: MessageCircle },
 ];
@@ -105,6 +105,17 @@ function SiderailContent({ onNavigate }: { onNavigate?: () => void }) {
           </a>
           <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-foreground transition-colors">
             <Mail className="h-4 w-4" />
+          </a>
+        </div>
+        <div className="mt-4 px-4">
+          <a
+            href="https://abaad-chatbot.streamlit.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center gap-2 w-full rounded-md bg-primary text-primary-foreground px-3 py-2 text-sm font-medium hover:bg-primary/90 transition-colors"
+          >
+            <Bot className="h-4 w-4" />
+            Try My ChatBot
           </a>
         </div>
       </div>

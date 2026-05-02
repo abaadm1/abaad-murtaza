@@ -8,7 +8,7 @@ export function SectionTitle({
   description?: string;
 }) {
   return (
-    <div className="reveal mb-12 max-w-2xl">
+    <div className="reveal mb-12 max-w-2xl mx-auto text-center">
       {eyebrow && (
         <div className="text-xs uppercase tracking-[0.2em] text-primary mb-3 font-medium">
           {eyebrow}

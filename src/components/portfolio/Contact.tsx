@@ -4,10 +4,10 @@ import { SectionTitle } from "./SectionTitle";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-24 px-6 bg-secondary/40">
+      <div className="max-w-6xl mx-auto text-center w-full">
         <SectionTitle
-          eyebrow="05 — Contact"
+          eyebrow="07 — Contact"
           title="Let's work together"
           description="Open to AI/ML engineering, data science, applied research, and LLM/NLP roles. Always happy to chat."
         />
