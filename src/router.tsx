@@ -61,6 +61,10 @@ export const getRouter = () => {
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
+    // Add base path for GitHub Pages deployment
+    ...(import.meta.env.PROD && {
+      base: '/abaad-murtaza/',
+    }),
   });
 
   return router;
