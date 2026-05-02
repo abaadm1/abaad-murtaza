@@ -6,7 +6,6 @@ import "./styles.css"
 
 const router = createRouter({
   routeTree,
-  basepath: '/abaad-murtaza',
 })
 
 const rootElement = document.getElementById('root')!

@@ -33,8 +33,7 @@ jobs:
       - name: Add 404.html for SPA routing
         run: |
           # GitHub Pages serves 404.html on unknown paths.
-          # This script redirects to index.html while preserving the path in the hash,
-          # so TanStack Router can pick it up on the client side.
+          # Redirect back to / so the SPA router can handle the route client-side.
           cat > dist/404.html << 'EOF'
           <!DOCTYPE html>
           <html>
@@ -42,14 +41,7 @@ jobs:
               <meta charset="utf-8" />
               <title>Abaad Murtaza — Portfolio</title>
               <script>
-                // Redirect to base path, encoding current path as query param
-                // so the SPA can restore it after load.
-                var seg = window.location.pathname
-                  .replace('/abaad-murtaza', '')
-                  .replace(/^\//, '');
-                window.location.replace(
-                  '/abaad-murtaza/' + (seg ? '?p=/' + seg : '') + window.location.hash
-                );
+                window.location.replace('/' + window.location.hash);
               </script>
             </head>
             <body></body>
